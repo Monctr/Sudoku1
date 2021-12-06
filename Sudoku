@@ -42,7 +42,7 @@ int rowsOk(int arr[10][10])
 
     for (int i = 0; i < 9; i++)
     {
-        int checkArr[10] = {0};
+        int checkArr[10] = { 0 };
         for (int j = 0; j < 9; j++)
         {
             //pokud je 0, tak preskoc
@@ -71,16 +71,16 @@ int rowsOk(int arr[10][10])
  *  @retval 0 NE
  *  @retval 1 ANO
  */
-int squaresOk(int arr[10][10])
+int squaresOk(int arr[10][10]) //funkce kontroly čtvercu
 {
 
-    for (int k = 0; k < 9; k+=3)
+    for (int k = 0; k < 9; k += 3)
     {
 
-        for (int l = 0; l < 9; l+=3)
+        for (int l = 0; l < 9; l += 3)
         {
 
-            int checkArr[10] = {0};
+            int checkArr[10] = { 0 };
             for (int i = k; i < 3; i++)
             {
 
@@ -118,7 +118,7 @@ int collumnsOk(int arr[10][10])
 
     for (int i = 0; i < 9; i++)
     {
-        int checkArr[10] = {0};
+        int checkArr[10] = { 0 };
         for (int j = 0; j < 9; j++)
         {
             if (arr[j][i] == 0)
@@ -139,13 +139,13 @@ int collumnsOk(int arr[10][10])
     return 1;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     //otevre soubor
-    FILE *fp = fopen(argv[1], "r");
+    FILE* fp = fopen("sudoku.txt", "r");
 
     //deklarace pole a jeho nulovani
-    int arr[10][10] = {0};
+    int arr[10][10] = { 0 };
 
     int y = 0;
     int x = 0;
@@ -178,7 +178,7 @@ int main(int argc, char **argv)
     while (1)
     {
         //vycisteni prikazoviho radku
-        printf("\e[1;1H\e[2J");
+        system("cls");
         //vytiskne pole
         printSudoku(arr);
         //pokud se zadaly neplatne souradnice tak vypis chybu
